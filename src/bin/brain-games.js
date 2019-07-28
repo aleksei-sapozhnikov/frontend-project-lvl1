@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import greet from '..';
+import { greet, getName, greetByName } from '..';
 
 greet();
+const name = getName();
+greetByName(name);
