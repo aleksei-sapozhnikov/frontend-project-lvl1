@@ -1,13 +1,15 @@
+import common from './logic-common';
+
 const getRules = () => 'What is the result of the expression?';
 
 const generateOperation = () => {
   const nOperations = 3;
-  const n = Math.floor(Math.random() * nOperations);
+  const n = common.getRandomInt(1, nOperations);
   switch (n) {
-    case 0: return '+';
-    case 1: return '-';
-    case 2: return '*';
-    default: return 'unknown operation';
+    case 1: return '+';
+    case 2: return '-';
+    case 3: return '*';
+    default: return null;
   }
 };
 
@@ -16,14 +18,14 @@ const calculate = (n1, n2, operation) => {
     case '+': return n1 + n2;
     case '-': return n1 - n2;
     case '*': return n1 * n2;
-    default: return 'unknown operation';
+    default: return null;
   }
 };
 
 const getQuestionAnswer = () => {
-  const maxNumber = 10;
-  const n1 = Math.floor(Math.random() * maxNumber);
-  const n2 = Math.floor(Math.random() * maxNumber);
+  const maxNumber = 9;
+  const n1 = common.getRandomInt(0, maxNumber);
+  const n2 = common.getRandomInt(0, maxNumber);
   const op = generateOperation();
   const question = `${n1} ${op} ${n2}`;
   const answer = calculate(n1, n2, op);
