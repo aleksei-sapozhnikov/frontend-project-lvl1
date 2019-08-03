@@ -1,4 +1,4 @@
-import common from './logic-common';
+import common from '../logic-common';
 
 const getRules = () => 'What is the result of the expression?';
 

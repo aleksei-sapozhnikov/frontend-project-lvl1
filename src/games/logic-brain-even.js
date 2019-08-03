@@ -1,4 +1,4 @@
-import common from './logic-common';
+import common from '../logic-common';
 
 const getRules = () => 'Answer "yes" if number even otherwise answer "no".';
 

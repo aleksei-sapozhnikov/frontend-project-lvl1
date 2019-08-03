@@ -1,4 +1,4 @@
-import common from './logic-common';
+import common from '../logic-common';
 
 const getRules = () => 'Find the greatest common divisor of given numbers';
 
