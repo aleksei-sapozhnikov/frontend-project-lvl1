@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const greet = () => {
+export const greet = () => {
   console.log('Welcome to the Brain Games!');
 };
 
-const getName = () => readlineSync.question('May I have your name? ');
+export const getName = () => readlineSync.question('May I have your name? ');
 
-const greetByName = (name) => {
+export const greetByName = (name) => {
   console.log(`Hello, ${name}!`);
 };
 
@@ -21,9 +21,9 @@ const check = (answer, correctAnswer) => {
   return wasRight;
 };
 
-const playGame = (logic, nQuestions) => {
+export const playGame = (logic, nQuestions) => {
   greet();
-  console.log(logic.getRules());
+  console.log(logic.rules);
   console.log();
 
   const name = getName();
@@ -32,14 +32,10 @@ const playGame = (logic, nQuestions) => {
 
   let wasRight = true;
   for (let i = 0; wasRight && i < nQuestions; i += 1) {
-    const qA = logic.getQuestionAnswer();
-    const answer = ask(qA.question);
-    wasRight = check(answer, qA.answer);
+    const questionAndAnswer = logic.getQuestionAndAnswer();
+    const answer = ask(questionAndAnswer.question);
+    wasRight = check(answer, questionAndAnswer.answer);
   }
 
   console.log(wasRight ? `Congratulations, ${name}!` : `Let's try again, ${name}!`);
-};
-
-export default {
-  greet, getName, greetByName, playGame,
 };

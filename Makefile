@@ -1,5 +1,3 @@
-# Makefile
-
 lint:
 	npx eslint .
 

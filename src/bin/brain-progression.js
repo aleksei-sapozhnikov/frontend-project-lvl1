@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import game from '../game-process';
+import { progression } from '../games-launcher';
 
-import logic from '../games/logic-brain-progression';
-
-game.playGame(logic, 3);
+progression();
