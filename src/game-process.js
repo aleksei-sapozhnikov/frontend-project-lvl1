@@ -21,9 +21,9 @@ const check = (answer, correctAnswer) => {
   return wasRight;
 };
 
-export const playGame = (logic, nQuestions) => {
+export const playGame = (rules, getQuestionAndAnswer, nQuestions) => {
   greet();
-  console.log(logic.rules);
+  console.log(rules);
   console.log();
 
   const name = getName();
@@ -32,7 +32,7 @@ export const playGame = (logic, nQuestions) => {
 
   let wasRight = true;
   for (let i = 0; wasRight && i < nQuestions; i += 1) {
-    const questionAndAnswer = logic.getQuestionAndAnswer();
+    const questionAndAnswer = getQuestionAndAnswer();
     const answer = ask(questionAndAnswer.question);
     wasRight = check(answer, questionAndAnswer.answer);
   }

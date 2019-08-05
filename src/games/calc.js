@@ -1,6 +1,6 @@
 import getRandomInt from '../random-int';
 
-const rules = 'What is the result of the expression?';
+export const rules = 'What is the result of the expression?';
 
 const applyRandomOperation = (n1, n2) => {
   const nOperations = 3;
@@ -13,7 +13,7 @@ const applyRandomOperation = (n1, n2) => {
   }
 };
 
-const getQuestionAndAnswer = () => {
+export const getQuestionAndAnswer = () => {
   const maxNumber = 9;
   const n1 = getRandomInt(0, maxNumber);
   const n2 = getRandomInt(0, maxNumber);
@@ -22,5 +22,3 @@ const getQuestionAndAnswer = () => {
   const answer = operationAndResult.result;
   return { question, answer };
 };
-
-export default { rules, getQuestionAndAnswer };

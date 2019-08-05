@@ -1,6 +1,6 @@
 import getRandomInt from '../random-int';
 
-const rules = 'What number is missing in the progression?';
+export const rules = 'What number is missing in the progression?';
 
 const nextProgressionNumber = (currentNumber, progressionStep) => currentNumber + progressionStep;
 
@@ -24,7 +24,7 @@ const getProgressionStringWithHiddenNumber = (start, step, nElements, indexHidde
 
 const nProgressionElements = 10;
 
-const getQuestionAndAnswer = () => {
+export const getQuestionAndAnswer = () => {
   const start = getRandomInt(0, 10);
   const step = getRandomInt(1, 5);
   const indexHidden = getRandomInt(0, nProgressionElements - 1);
@@ -35,5 +35,3 @@ const getQuestionAndAnswer = () => {
   const answer = `${progression.hidden}`;
   return { question, answer };
 };
-
-export default { rules, getQuestionAndAnswer };

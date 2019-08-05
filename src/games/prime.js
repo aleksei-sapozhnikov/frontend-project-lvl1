@@ -1,15 +1,12 @@
 import getRandomInt from '../random-int';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  if (num < 1) {
-    return false;
-  }
   if (num === 2) {
     return true;
   }
-  if (num === 1 || num % 2 === 0) {
+  if (num < 1 || num === 1 || num % 2 === 0) {
     return false;
   }
 
@@ -22,11 +19,9 @@ const isPrime = (num) => {
   return true;
 };
 
-const getQuestionAndAnswer = () => {
+export const getQuestionAndAnswer = () => {
   const num = getRandomInt(1, 100);
   const question = String(num);
   const answer = isPrime(num) ? 'yes' : 'no';
   return { question, answer };
 };
-
-export default { rules, getQuestionAndAnswer };
