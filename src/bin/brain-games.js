@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import { stupid } from '../games-launcher';
+import { greet, getName, greetByName } from '../game-process';
 
-stupid();
+greet();
+const name = getName();
+greetByName(name);

@@ -1,6 +1,6 @@
 import getRandomInt from '../random-int';
 
-export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num === 2) {

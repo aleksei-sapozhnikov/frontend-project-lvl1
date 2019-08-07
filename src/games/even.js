@@ -1,6 +1,6 @@
 import getRandomInt from '../random-int';
 
-export const rules = 'Answer "yes" if number even otherwise answer "no".';
+export const description = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = number => number % 2 === 0;
 

@@ -21,7 +21,9 @@ const check = (answer, correctAnswer) => {
   return wasRight;
 };
 
-export const playGame = (rules, getQuestionAndAnswer, nQuestions) => {
+const nQuestions = 3;
+
+export const playGame = (rules, getQuestionAndAnswer) => {
   greet();
   console.log(rules);
   console.log();

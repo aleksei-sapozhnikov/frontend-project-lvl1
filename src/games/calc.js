@@ -1,6 +1,6 @@
 import getRandomInt from '../random-int';
 
-export const rules = 'What is the result of the expression?';
+export const description = 'What is the result of the expression?';
 
 const applyRandomOperation = (n1, n2) => {
   const nOperations = 3;

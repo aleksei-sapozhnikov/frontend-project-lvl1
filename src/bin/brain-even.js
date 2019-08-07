@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { even } from '../games-launcher';
+import { description, getQuestionAndAnswer } from '../games/even';
+import { playGame } from '../game-process';
 
-even();
+playGame(description, getQuestionAndAnswer);

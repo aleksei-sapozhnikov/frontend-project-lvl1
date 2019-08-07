@@ -2,11 +2,11 @@ import {
   greet, getName, greetByName, playGame,
 } from './game-process';
 
-import { rules as rulesCalc, getQuestionAndAnswer as getQaCalc } from './games/calc';
-import { rules as rulesEven, getQuestionAndAnswer as getQaEven } from './games/even';
-import { rules as rulesGcd, getQuestionAndAnswer as getQaGcd } from './games/gcd';
-import { rules as rulesPrime, getQuestionAndAnswer as getQaPrime } from './games/prime';
-import { rules as rulesProgression, getQuestionAndAnswer as getQaProgression } from './games/progression';
+import { description as rulesCalc, getQuestionAndAnswer as getQaCalc } from './games/calc';
+import { description as rulesEven, getQuestionAndAnswer as getQaEven } from './games/even';
+import { description as rulesGcd, getQuestionAndAnswer as getQaGcd } from './games/gcd';
+import { description as rulesPrime, getQuestionAndAnswer as getQaPrime } from './games/prime';
+import { description as rulesProgression, getQuestionAndAnswer as getQaProgression } from './games/progression';
 
 const nPlays = 3;
 

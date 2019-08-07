@@ -1,37 +1,29 @@
 import getRandomInt from '../random-int';
 
-export const rules = 'What number is missing in the progression?';
-
-const nextProgressionNumber = (currentNumber, progressionStep) => currentNumber + progressionStep;
+export const description = 'What number is missing in the progression?';
 
 const getProgressionStringWithHiddenNumber = (start, step, nElements, indexHidden) => {
-  let hidden = null;
   let str = '';
 
   let current = start;
   for (let i = 0; i < nElements; i += 1) {
     const isHidden = i === indexHidden;
-    if (isHidden) {
-      hidden = current;
-      str = `${str} ..`;
-    } else {
-      str = `${str} ${current}`;
-    }
-    current = nextProgressionNumber(current, step);
+    str = isHidden ? `${str} ..` : `${str} ${current}`;
+    current = start + (i + 1) * step;
   }
-  return { str, hidden };
+  str = str.trim();
+  const hiddenElement = start + (indexHidden) * step;
+  return { str, hiddenElement };
 };
 
-const nProgressionElements = 10;
+const progressionLength = 10;
 
 export const getQuestionAndAnswer = () => {
   const start = getRandomInt(0, 10);
   const step = getRandomInt(1, 5);
-  const indexHidden = getRandomInt(0, nProgressionElements - 1);
+  const hiddenElementIndex = getRandomInt(0, progressionLength - 1);
   const progression = getProgressionStringWithHiddenNumber(
-    start, step, nProgressionElements, indexHidden,
+    start, step, progressionLength, hiddenElementIndex,
   );
-  const question = `${progression.str}`;
-  const answer = `${progression.hidden}`;
-  return { question, answer };
+  return { question: String(progression.str), answer: String(progression.hiddenElement) };
 };

@@ -1,6 +1,6 @@
 import getRandomInt from '../random-int';
 
-export const rules = 'Find the greatest common divisor of given numbers';
+export const description = 'Find the greatest common divisor of given numbers';
 
 const findGreatestCommonDivisor = (n1, n2) => {
   const big = Math.max(n1, n2);

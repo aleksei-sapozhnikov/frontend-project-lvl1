@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { progression } from '../games-launcher';
+import { description, getQuestionAndAnswer } from '../games/progression';
+import { playGame } from '../game-process';
 
-progression();
+playGame(description, getQuestionAndAnswer);

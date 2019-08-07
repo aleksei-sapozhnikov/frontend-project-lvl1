@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { gcd } from '../games-launcher';
+import { description, getQuestionAndAnswer } from '../games/gcd';
+import { playGame } from '../game-process';
 
-gcd();
+playGame(description, getQuestionAndAnswer);

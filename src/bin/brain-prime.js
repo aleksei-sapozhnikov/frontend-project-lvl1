@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { prime } from '../games-launcher';
+import { description, getQuestionAndAnswer } from '../games/prime';
+import { playGame } from '../game-process';
 
-prime();
+playGame(description, getQuestionAndAnswer);
