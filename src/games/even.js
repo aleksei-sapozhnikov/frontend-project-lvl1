@@ -1,4 +1,4 @@
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 export const description = 'Answer "yes" if number even otherwise answer "no".';
 

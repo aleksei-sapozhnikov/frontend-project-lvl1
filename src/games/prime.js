@@ -1,4 +1,4 @@
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

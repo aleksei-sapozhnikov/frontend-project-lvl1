@@ -1,4 +1,4 @@
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 export const description = 'What is the result of the expression?';
 
@@ -18,7 +18,8 @@ export const getQuestionAndAnswer = () => {
   const n1 = getRandomInt(0, maxNumber);
   const n2 = getRandomInt(0, maxNumber);
   const operationAndResult = applyRandomOperation(n1, n2);
-  const question = operationAndResult.str;
-  const answer = operationAndResult.result;
-  return { question, answer };
+  return {
+    question: String(operationAndResult.str),
+    answer: String(operationAndResult.result),
+  };
 };

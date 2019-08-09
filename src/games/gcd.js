@@ -1,4 +1,4 @@
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 export const description = 'Find the greatest common divisor of given numbers';
 
@@ -17,6 +17,6 @@ export const getQuestionAndAnswer = () => {
   const n1 = getRandomInt(1, maxNumber);
   const n2 = getRandomInt(1, maxNumber);
   const question = `${n1} ${n2}`;
-  const answer = findGreatestCommonDivisor(n1, n2);
+  const answer = String(findGreatestCommonDivisor(n1, n2));
   return { question, answer };
 };

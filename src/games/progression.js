@@ -1,19 +1,21 @@
-import getRandomInt from '../random-int';
+import { getRandomInt } from '../utils';
 
 export const description = 'What number is missing in the progression?';
 
-const getProgressionStringWithHiddenNumber = (start, step, nElements, indexHidden) => {
-  let str = '';
+const getProgressionStringWithHiddenNumber = (start, step,
+  howMuchElementWeWantToSeeInTheArithmeticProgressionStringThatTheFunctionMustReturn,
+  hiddenIndex) => {
+  let temporaryProgressionStringWeAreGraduallyBuildingDuringTheCycleIterations = '';
 
-  let current = start;
-  for (let i = 0; i < nElements; i += 1) {
-    const isHidden = i === indexHidden;
-    str = isHidden ? `${str} ..` : `${str} ${current}`;
-    current = start + (i + 1) * step;
+  for (let i = 0;
+    i < howMuchElementWeWantToSeeInTheArithmeticProgressionStringThatTheFunctionMustReturn;
+    i += 1) {
+    const isHidden = i === hiddenIndex;
+    temporaryProgressionStringWeAreGraduallyBuildingDuringTheCycleIterations = isHidden
+      ? `${temporaryProgressionStringWeAreGraduallyBuildingDuringTheCycleIterations} ..`
+      : `${temporaryProgressionStringWeAreGraduallyBuildingDuringTheCycleIterations} ${start + i * step}`;
   }
-  str = str.trim();
-  const hiddenElement = start + (indexHidden) * step;
-  return { str, hiddenElement };
+  return temporaryProgressionStringWeAreGraduallyBuildingDuringTheCycleIterations.trim();
 };
 
 const progressionLength = 10;
@@ -21,9 +23,10 @@ const progressionLength = 10;
 export const getQuestionAndAnswer = () => {
   const start = getRandomInt(0, 10);
   const step = getRandomInt(1, 5);
-  const hiddenElementIndex = getRandomInt(0, progressionLength - 1);
-  const progression = getProgressionStringWithHiddenNumber(
-    start, step, progressionLength, hiddenElementIndex,
+  const hiddenIndex = getRandomInt(0, progressionLength - 1);
+  const question = getProgressionStringWithHiddenNumber(
+    start, step, progressionLength, hiddenIndex,
   );
-  return { question: String(progression.str), answer: String(progression.hiddenElement) };
+  const answer = String(start + hiddenIndex * step);
+  return { question, answer };
 };
