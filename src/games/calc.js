@@ -1,6 +1,7 @@
 import { getRandomInt } from '../utils';
+import playGame from '../game-process';
 
-export const description = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const applyRandomOperation = (n1, n2) => {
   const nOperations = 3;
@@ -13,7 +14,7 @@ const applyRandomOperation = (n1, n2) => {
   }
 };
 
-export const getQuestionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const maxNumber = 9;
   const n1 = getRandomInt(0, maxNumber);
   const n2 = getRandomInt(0, maxNumber);
@@ -23,3 +24,5 @@ export const getQuestionAndAnswer = () => {
     answer: String(operationAndResult.result),
   };
 };
+
+export default () => playGame(description, getQuestionAndAnswer);

@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
 
-import { description as descriptionCalc, getQuestionAndAnswer as getQuestionAndAnswerCalc } from './games/calc';
-import { description as descriptionEven, getQuestionAndAnswer as getQuestionAndAnswerEven } from './games/even';
-import { description as descriptionGcd, getQuestionAndAnswer as getQuestionAndAnswerGcd } from './games/gcd';
-import { description as descriptionPrime, getQuestionAndAnswer as getQuestionAndAnswerPrime } from './games/prime';
-import { description as descriptionProgression, getQuestionAndAnswer as getQuestionAndAnswerProgression } from './games/progression';
-
 const greet = () => {
   console.log('Welcome to the Brain Games!');
 };
@@ -29,7 +23,7 @@ const check = (answer, correctAnswer) => {
 
 const numberOfQuestionsTheGameMustAskUserAndGetRightAnswersToSayThatTheUserIsAWinner = 3;
 
-const playGame = (description, getQuestionAndAnswer) => {
+export default (description, getQuestionAndAnswer) => {
   greet();
   console.log(description);
   console.log();
@@ -50,11 +44,3 @@ const playGame = (description, getQuestionAndAnswer) => {
 
   console.log(wasRight ? `Congratulations, ${name}!` : `Let's try again, ${name}!`);
 };
-
-export const playCalc = () => playGame(descriptionCalc, getQuestionAndAnswerCalc);
-export const playEven = () => playGame(descriptionEven, getQuestionAndAnswerEven);
-export const playGcd = () => playGame(descriptionGcd, getQuestionAndAnswerGcd);
-export const playPrime = () => playGame(descriptionPrime, getQuestionAndAnswerPrime);
-export const playProgression = () => playGame(
-  descriptionProgression, getQuestionAndAnswerProgression,
-);

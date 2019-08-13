@@ -1,4 +1,5 @@
 import { getRandomInt } from '../utils';
+import playGame from '../game-process';
 
 export const description = 'Answer "yes" if number even otherwise answer "no".';
 
@@ -12,3 +13,5 @@ export const getQuestionAndAnswer = () => {
   const answer = isEven(number) ? 'yes' : 'no';
   return { question, answer };
 };
+
+export default () => playGame(description, getQuestionAndAnswer);

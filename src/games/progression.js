@@ -1,4 +1,5 @@
 import { getRandomInt } from '../utils';
+import playGame from '../game-process';
 
 export const description = 'What number is missing in the progression?';
 
@@ -30,3 +31,5 @@ export const getQuestionAndAnswer = () => {
   const answer = String(start + hiddenIndex * step);
   return { question, answer };
 };
+
+export default () => playGame(description, getQuestionAndAnswer);

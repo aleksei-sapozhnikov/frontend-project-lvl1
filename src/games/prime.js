@@ -1,4 +1,5 @@
 import { getRandomInt } from '../utils';
+import playGame from '../game-process';
 
 export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -25,3 +26,5 @@ export const getQuestionAndAnswer = () => {
   const answer = isPrime(num) ? 'yes' : 'no';
   return { question, answer };
 };
+
+export default () => playGame(description, getQuestionAndAnswer);
