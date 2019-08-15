@@ -4,8 +4,8 @@ import playGame from '../game-process';
 const description = 'What is the result of the expression?';
 
 const applyRandomOperation = (n1, n2) => {
-  const nOperations = 3;
-  const operationIndex = getRandomInt(1, nOperations);
+  const operationsCount = 3;
+  const operationIndex = getRandomInt(1, operationsCount);
   switch (operationIndex) {
     case 1: return { str: `${n1} + ${n2}`, result: n1 + n2 };
     case 2: return { str: `${n1} - ${n2}`, result: n1 - n2 };

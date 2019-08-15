@@ -21,7 +21,7 @@ const check = (answer, correctAnswer) => {
   return wasRight;
 };
 
-const numberOfQuestionsTheGameMustAskUserAndGetRightAnswersToSayThatTheUserIsAWinner = 3;
+const questionCount = 3;
 
 export default (description, getQuestionAndAnswer) => {
   greet();
@@ -33,9 +33,7 @@ export default (description, getQuestionAndAnswer) => {
   console.log();
 
   let wasRight = true;
-  for (let i = 0;
-    wasRight && i < numberOfQuestionsTheGameMustAskUserAndGetRightAnswersToSayThatTheUserIsAWinner;
-    i += 1) {
+  for (let i = 0; wasRight && i < questionCount; i += 1) {
     const questionAndAnswer = getQuestionAndAnswer();
     const [question, rightAnswer] = [questionAndAnswer.question, questionAndAnswer.answer];
     const answer = ask(question);
