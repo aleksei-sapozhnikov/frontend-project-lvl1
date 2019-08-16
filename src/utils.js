@@ -1,4 +1,4 @@
-export const justToFoolLinter = 'remove this export when there will be more than one export in the module';
+export const identity = val => val;
 
 export const getRandomInt = (min, max) => {
   if (max < min) {
